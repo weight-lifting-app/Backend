@@ -6,7 +6,7 @@ const cors = require('cors');
 const server = express();
 
 // Import Routers/Helpers
-// const authRouter = require('');
+const authRouter = require('./authorization/auth-router.js');
 
 // Server Use
 server.use(helmet());
@@ -14,7 +14,7 @@ server.use(express.json());
 server.use(cors());
 
 // Set Routers
-// server.use('/api/auth', authRouter);
+server.use('/api/auth', authRouter);
 
 //Server Test Msg
 server.get('/', (req, res) => {
