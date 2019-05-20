@@ -13,7 +13,7 @@ router.post('/register', (req, res) => {
     const hash = bcrypt.hashSync(user.password, 12); //hash password
     user.password = hash;
 
-    if(!user.name && !user.password ) {
+    if(!user.username && !user.password ) {
         res.status(401).json({ message: "Please provide a username and password for this user."})
     } else {
         db.addNew(user)
