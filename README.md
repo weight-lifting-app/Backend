@@ -12,6 +12,8 @@ https://lambdafit.herokuapp.com/
 | ------ | ---------------------- | ------------------------------- | ----------------------------------------------------------------------- |
 | POST   | `/auth/register/`      | `username`, `password`,         | Registers a New User to our database. Creates a token.                  |
 | POST   | `/auth/login/`         | `username`, `password`          | Logs a returning user in. Creates a token.                              |
+| GET    | `/user/:id/`           | Successful Login                | Used to show a specified user information.                              |
+| PUT    | `/user/:id/`           | Successful Login                | Used to update the specified user's information in the database.        |
 | GET    | `/exercises`           | Successful Login: uses JWT      | Used to show exercises in the database.                                 |
 | GET    | `/exercises/:id/`      | Successful Login                | Used to show a specific piece of exercises in the database.             |
 | POST   | `/exercises/`          | Successful Login, Data: `name`  | Used to post a new piece of exercises to the database.                  |
