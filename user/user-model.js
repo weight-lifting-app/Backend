@@ -1,8 +1,13 @@
 const db = require('../data/dbConfig.js');
 
 module.exports = {
+    getUsers,
     getById,
     update,
+};
+
+function getUsers() {
+    return db('users')
 };
 
 function getById(id) {
