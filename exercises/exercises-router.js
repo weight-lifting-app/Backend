@@ -72,7 +72,7 @@ router.put('/:id', (req, res) => {
         if(changes) {
             res.status(200).json({ message: "Exercise successfully updated."})
         } else {
-            res.status(404).json({ message: "The specified project does not exist."})
+            res.status(404).json({ message: "The specified exercise does not exist."})
         }
     })
     .catch(err => {
