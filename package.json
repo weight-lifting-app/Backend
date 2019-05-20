@@ -4,7 +4,7 @@
   "description": "Backend repository for project: Lambda Fit",
   "main": "index.js",
   "repository": "https://github.com/weight-lifting-app/Backend.git",
-  "authors": "Patrick Steveson and Austin James",
+  "authors": "Patrick Steveson",
   "scripts": {
     "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watch",
