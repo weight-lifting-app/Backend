@@ -7,9 +7,9 @@ Our Backend code for our weight lifting journal.
 
 | Method | Endpoint               | Requires                        | Description                                                             |
 | ------ | ---------------------- | ------------------------------- | ----------------------------------------------------------------------- |
-| POST   | `/api/auth/register/`  | `username`, `password`, `email` | Registers a New User to our database. Creates a token.                  |
-| POST   | `/api/auth/login/`     | `username`, `password`          | Logs a returning user in. Creates a token.                              |
-
+| POST   | `/auth/register/`      | `username`, `password`,         | Registers a New User to our database. Creates a token.                  |
+| POST   | `/auth/login/`         | `username`, `password`          | Logs a returning user in. Creates a token.                              |
+| GET    | `/exercises`           | Successful Login: uses JWT      | Used to show exercises in the database.                                 |
 
 # Sample User.
 user: {

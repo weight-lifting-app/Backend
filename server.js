@@ -15,8 +15,8 @@ server.use(express.json());
 server.use(cors());
 
 // Set Routers
-server.use('/api/auth', authRouter);
-server.use('/api/exercises', exercisesRouter);
+server.use('/auth', authRouter);
+server.use('/exercises', exercisesRouter);
 
 //Server Test Msg
 server.get('/', (req, res) => {
