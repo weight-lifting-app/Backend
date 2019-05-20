@@ -21,6 +21,7 @@ function getById(id) {
 function addNew(exercise) {
     return db('exercises')
     .insert(exercise)
+    .returning('id')
     .then(id => {
         return getById(id[0])
     })

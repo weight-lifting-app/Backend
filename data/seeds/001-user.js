@@ -10,6 +10,7 @@ exports.seed = function(knex, Promise) {
           age: 27,
           height: '6foot',
           weight: 185,
+          gender: 'male',
           email: 'patrick@gmail.com'
         }
       ]);

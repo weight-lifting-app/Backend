@@ -26,6 +26,7 @@ function getById(id) {
 function addNew(user) {
     return db('users')
     .insert(user)
+    .returning('id')
     .then(newUser => {
         return getById(newUser[0])
     });
