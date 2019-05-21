@@ -15,8 +15,8 @@ https://lambdafit.herokuapp.com/
 | GET    | `/user/:id/`           | Successful Login                | Used to show a specified user information.                              |
 | PUT    | `/user/:id/`           | Successful Login                | Used to update the specified user's information in the database.        |
 | GET    | `/exercises`           | Successful Login: uses JWT      | Used to show exercises in the database.                                 |
-| GET    | `/exercises/:id/`      | Successful Login                | Used to show a specific piece of exercises in the database.             |
-| POST   | `/exercises/`          | Successful Login, Data: `name`  | Used to post a new piece of exercises to the database.                  |
+| GET    | `/exercises/:id/`      | Successful Login                | Used to show a specific exercises in the database.                      |
+| POST   | `/exercises/`          | Successful Login, Data: `name`  | Used to post a new exercises to the database.                           |
 | PUT    | `/exercises/:id`       | Successful Login, Data: `name`  | Used to edit the logged in user's exercises.                            |
 | DELETE | `/exercises/:id/`      | Successful Login                | Used to delete the logged in user's exercises.                          |
 
