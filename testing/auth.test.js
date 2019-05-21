@@ -55,5 +55,14 @@ describe("authorization", () => {
           expect(res.status).toBe(401);
         });
     });
+
+    it("/login returns a 500, with bad request credentials", () => {
+      return request(server)
+        .post("/auth/login")
+        .send({ password: "austin", password: "pass" })
+        .then(res => {
+          expect(res.status).toBe(500);
+        });
+    });
   });
 });

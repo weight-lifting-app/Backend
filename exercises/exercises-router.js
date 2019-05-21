@@ -6,9 +6,7 @@ const restrict = require("../authorization/authorize-middleware.js");
 
 //Get Exercises.
 router.get("/", (req, res) => {
-  const id = req.params.id;
-
-  db.getAll(id)
+  db.getAll()
     .then(exercises => {
       res.status(200).json(exercises);
     })
@@ -25,7 +23,7 @@ router.get("/:id", (req, res) => {
         res.status(200).json(exercise);
       } else {
         res
-          .status(400)
+          .status(404)
           .json({ message: "The specified exercise does not exist." });
       }
     })
