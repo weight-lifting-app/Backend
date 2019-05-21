@@ -35,8 +35,8 @@ exports.up = function(knex, Promise) {
     tbl.string('body_region', 128).notNullable()
 
     tbl.string('amount_lifted', 128).notNullable()
-
     tbl.string('reps', 128)
+    tbl.string('sets', 128)
     tbl.string('date', 128).notNullable()
   })
 };
