@@ -4,7 +4,7 @@ Our Backend code for our weight lifting journal.
 # Hosted on Heroku
 https://lambdafit.herokuapp.com/
 
-# Patrick Steveson
+# Patrick Steveson and Austin James
 
 ## Endpoints
 
