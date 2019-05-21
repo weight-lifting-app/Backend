@@ -39,5 +39,6 @@ exercises: {
     body_region: 'Chest'
     amount_lifted: '185',
     reps: '8',
+    sets: '2'
     date: '2/7/2019'
 }

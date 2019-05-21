@@ -18,6 +18,7 @@ function getAll() {
       body_region: "exercises.body_region",
       amount_lifted: "exercises.amount_lifted",
       reps: "exercises.reps",
+      sets: "exercises.sets",
       date: "exercises.date",
       id: "exercises.id"
     });
