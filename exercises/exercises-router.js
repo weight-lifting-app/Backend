@@ -6,8 +6,9 @@ const restrict = require("../authorization/authorize-middleware.js");
 
 //Get Exercises.
 router.get("/", (req, res) => {
-  console.log(req.params.id);
-  db.getAll()
+  const id = req.params.id;
+
+  db.getAll(id)
     .then(exercises => {
       res.status(200).json(exercises);
     })
@@ -18,9 +19,7 @@ router.get("/", (req, res) => {
 
 //Get Exercise by ID.
 router.get("/:id", (req, res) => {
-  const id = req.params.id;
-
-  db.getById(id)
+  db.getById()
     .then(exercise => {
       if (exercise) {
         res.status(200).json(exercise);

@@ -4,6 +4,17 @@ const router = require('express').Router();
 const db = require('./user-model.js');
 const restrict = require('../authorization/authorize-middleware.js');
 
+//Get Users
+router.get('/', (req, res) => {
+    db.getUsers()
+    .then(users => {
+        res.status(200).json(users)
+    })
+    .catch(err => {
+        res.status(500).json(err.message)
+    })
+})
+
 //Get User by ID
 router.get('/:id', (req, res) => {
     const id = req.params.id;
