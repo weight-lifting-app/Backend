@@ -4,7 +4,7 @@ Our Backend code for our weight lifting journal.
 # Hosted on Heroku
 https://lambdafit.herokuapp.com/
 
-# Patrick Steveson
+# Patrick Steveson and Austin James
 
 ## Endpoints
 
@@ -39,5 +39,6 @@ exercises: {
     body_region: 'Chest'
     amount_lifted: '185',
     reps: '8',
+    sets: '2'
     date: '2/7/2019'
 }
