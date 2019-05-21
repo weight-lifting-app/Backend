@@ -10,6 +10,17 @@ module.exports = {
 
 function getAll() {
     return db('exercises')
+    .leftJoin('users', 'exercises.user_id', 'users.id')
+    .select({
+        name: 'exercises.name',
+        username: 'users.username',
+        user_id: 'exercises.user_id',
+        body_region: 'exercises.body_region',
+        amount_lifted: 'exercises.amount_lifted',
+        reps: 'exercises.reps',
+        date: 'exercises.date',
+        id: 'exercises.id'
+    })
 };
 
 function getById(id) {
