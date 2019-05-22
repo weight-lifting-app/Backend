@@ -4,6 +4,7 @@ const router = require("express").Router();
 const db = require("./user-model.js");
 const restrict = require("../authorization/authorize-middleware.js");
 
+
 //Bringing in cloudinary settings
 const { cloudinaryConfig, uploader } = require('../images/cloudinaryConfig.js');
 const { multerUploads, dataUri } = require('../images/multer.js');
@@ -67,7 +68,8 @@ router.get("/:id/exercises", async (req, res) => {
       message: "Error getting the exercises for the user"
     });
   }
-});
+}); 
+
 
 //Post an image to cloudinary.
 router.post('/:id/upload', multerUploads, (req, res) => {
@@ -82,5 +84,6 @@ router.post('/:id/upload', multerUploads, (req, res) => {
     })
   };
 })
+
 
 module.exports = router;
