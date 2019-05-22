@@ -4,7 +4,7 @@ const users = require("../authorization/auth-router.js");
 const server = require("../server.js");
 
 describe("authorization", () => {
-  beforeAll(async () => {
+  beforeEach(async () => {
     await db("users").truncate();
   });
 
@@ -38,13 +38,15 @@ describe("authorization", () => {
   });
 
   describe("/LOGIN", () => {
-    it("/login returns a 200, success with valid credentials", () => {
-      return request(server)
+    it("/login returns a 200, success with valid credentials", async () => {
+      await request(server)
+        .post("/auth/register")
+        .send({ username: "patty", password: "pass" });
+
+      const expected = await request(server)
         .post("/auth/login")
-        .send({ username: "patty", password: "pass" })
-        .then(res => {
-          expect(res.status).toBe(200);
-        });
+        .send({ username: "patty", password: "pass" });
+      expect(expected.status).toBe(200);
     });
 
     it("/login returns a 401, with invalid credentials", () => {

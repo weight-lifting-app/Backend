@@ -17,7 +17,9 @@ router.get("/", (req, res) => {
 
 //Get Exercise by ID.
 router.get("/:id", (req, res) => {
-  db.getById()
+  const id = req.params.id;
+
+  db.getById(id)
     .then(exercise => {
       if (exercise) {
         res.status(200).json(exercise);

@@ -67,7 +67,7 @@ describe("user", () => {
       expect(expected.status).toBe(404);
     });
 
-    it("returns a 404 or 500?, bad request on update to incomplete endpoint", async () => {
+    it("returns a 404, bad request on update to incomplete endpoint", async () => {
       await request(server)
         .post("/auth/register")
         .send({ username: "patt", password: "pass" });
