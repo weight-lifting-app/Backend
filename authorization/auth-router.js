@@ -39,7 +39,7 @@ router.post("/login", (req, res) => {
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
         const token = generateToken(user); //create token
-        res.status(200).json({
+        res.status(200).json({ user_id: user.id,
           message: `Welcome, ${user.username}, enjoy LambdaFit.`,
           token
         });
