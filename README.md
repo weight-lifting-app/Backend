@@ -13,12 +13,15 @@ https://lambdafit.herokuapp.com/
 | POST   | `/auth/register/`      | `username`, `password`,         | Registers a New User to our database. Creates a token.                  |
 | POST   | `/auth/login/`         | `username`, `password`          | Logs a returning user in. Creates a token.                              |
 | GET    | `/user/:id/`           | Successful Login                | Used to show a specified user information.                              |
+| POST   | `/user/:id/upload`     | Successful Login, image file.   | Uploads a user image to cloudinary, used for progress photos.           |
 | PUT    | `/user/:id/`           | Successful Login                | Used to update the specified user's information in the database.        |
 | GET    | `/exercises`           | Successful Login: uses JWT      | Used to show exercises in the database.                                 |
 | GET    | `/exercises/:id/`      | Successful Login                | Used to show a specific exercises in the database.                      |
+| GET    | `/user/:id/exercises`  | Successful Login                | Used to show specific exercises linked to logged in user ID.            |
 | POST   | `/exercises/`          | Successful Login, Data: `name`  | Used to post a new exercises to the database.                           |
 | PUT    | `/exercises/:id`       | Successful Login, Data: `name`  | Used to edit the logged in user's exercises.                            |
 | DELETE | `/exercises/:id/`      | Successful Login                | Used to delete the logged in user's exercises.                          |
+
 
 
 # Sample User.
