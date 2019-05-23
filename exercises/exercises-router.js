@@ -4,6 +4,7 @@ const router = require("express").Router();
 const db = require("./exercises-model.js");
 const restrict = require("../authorization/authorize-middleware.js");
 
+router.use(restrict);
 //Get Exercises.
 router.get("/", (req, res) => {
   db.getAll()
