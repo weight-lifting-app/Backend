@@ -4,10 +4,9 @@ const router = require("express").Router();
 const db = require("./user-model.js");
 const restrict = require("../authorization/authorize-middleware.js");
 
-
 //Bringing in cloudinary settings
-const { cloudinaryConfig, uploader } = require('../images/cloudinaryConfig.js');
-const { multerUploads, dataUri } = require('../images/multer.js');
+const { cloudinaryConfig, uploader } = require("../images/cloudinaryConfig.js");
+const { multerUploads, dataUri } = require("../images/multer.js");
 cloudinaryConfig(router);
 
 //Get Users
@@ -68,22 +67,32 @@ router.get("/:id/exercises", async (req, res) => {
       message: "Error getting the exercises for the user"
     });
   }
-}); 
-
+});
 
 //Post an image to cloudinary.
-router.post('/:id/upload', multerUploads, (req, res) => {
-  if(req.file) {
+router.post("/:id/upload", multerUploads, (req, res) => {
+  if (req.file) {
     const file = dataUri(req).content;
-    return uploader.upload(file).then(result => {
-      const image = result.url;
-      return res.status(200).json({ message: "Your image has been uploaded to cloudinary!", data: { image }})
-    })
-    .catch(err => {
-      res.status(400).json({ message: "An error occurred while processing your request.", err: err })
-    })
-  };
-})
-
+    return uploader
+      .upload(file)
+      .then(result => {
+        const image = result.url;
+        return res
+          .status(200)
+          .json({
+            message: "Your image has been uploaded to cloudinary!",
+            data: { image }
+          });
+      })
+      .catch(err => {
+        res
+          .status(400)
+          .json({
+            message: "An error occurred while processing your request.",
+            err: err
+          });
+      });
+  }
+});
 
 module.exports = router;
